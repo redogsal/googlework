@@ -17,6 +17,10 @@ class VideoLibrary:
     def __init__(self):
         """The VideoLibrary class is initialized."""
         self._videos = {}
+        self._playing_video = ""
+        self._paused = False
+        self._video_id = ""
+        self._video_tags = ""
         with open(Path(__file__).parent / "videos.txt") as video_file:
             reader = _csv_reader_with_strip(
                 csv.reader(video_file, delimiter="|"))
